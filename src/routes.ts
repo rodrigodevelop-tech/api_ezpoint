@@ -4,7 +4,7 @@ import { TaskController } from './controllers/TaskController';
 import { UserController } from './controllers/UserController';
 import { UserLocationController } from './controllers/UserLocationController';
 
-import { Auth } from './middlewares/auth';
+import { Auth } from './middlewares/Auth';
 
 const auth = new Auth();
 
@@ -16,10 +16,10 @@ const taskController = new TaskController();
 const routes = Router();
 
 routes.post("/login",userControler.login);
+routes.post("/users",userControler.create);
 
 routes.use(auth.AuthLogin);
 
-routes.post("/users",userControler.create);
 routes.post("/infoPoint",infoPointController.create);
 routes.post("/infoPoint/location",userLocationController.create);
 routes.post("/task",taskController.create);

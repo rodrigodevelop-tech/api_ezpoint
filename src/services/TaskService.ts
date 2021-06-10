@@ -7,6 +7,7 @@ interface ITask {
     title : string;
     description : string;
     category : string;
+    id_category : number;
     status : string;
     date_hours_final : Date;
     date_hours_end : Date;
@@ -23,6 +24,7 @@ class TaskService {
         title,
         description,
         category,
+        id_category,
         status,
         date_hours_final,
         date_hours_end 
@@ -34,10 +36,12 @@ class TaskService {
       title,
       description,
       category,
+      id_category,
       status,
       date_hours_final,
       date_hours_end 
     });
+    console.log(task);
 
     await this.taskRepository.save(task); 
 

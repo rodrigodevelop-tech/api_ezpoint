@@ -33,6 +33,10 @@ export class Tasks1622930525570 implements MigrationInterface {
                         type:"varchar"
                     },
                     {
+                        name:"id_category",
+                        type:"integer"
+                    },
+                    {
                         name:"status",
                         type:"varchar"
                     },

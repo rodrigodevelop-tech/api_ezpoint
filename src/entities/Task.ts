@@ -35,6 +35,9 @@ class Task {
   category           : string;
 
   @Column()
+  id_category           : number;
+
+  @Column()
   status           : string;
 
   @Column()
