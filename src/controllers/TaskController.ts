@@ -34,11 +34,21 @@ class TaskController {
    return res.json(task);
   }
   async showByTask(req: Request, res : Response){
-    const { id } = req.params;
+    const { userId,categoryId } = req.params;
     
     const taskService = new TaskService();
 
-    const list = await taskService.listByTask(parseInt(id));
+    const list = await taskService.listByTask(parseInt(categoryId),parseInt(userId));
+
+    console.log(list)
+    return res.json(list);
+  }
+
+  async listByTaskAll(req: Request, res : Response){
+    
+    const taskService = new TaskService();
+
+    const list = await taskService.listByTaskAll();
 
     console.log(list)
     return res.json(list);

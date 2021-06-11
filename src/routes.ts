@@ -23,6 +23,7 @@ routes.use(auth.AuthLogin);
 routes.post("/infoPoint",infoPointController.create);
 routes.post("/infoPoint/location",userLocationController.create);
 routes.post("/task",taskController.create);
-routes.get("/task/:id",taskController.showByTask);
+routes.get("/task/:userId/:categoryId",taskController.showByTask);
+routes.get("/task/list",taskController.listByTaskAll);
 
 export {routes};

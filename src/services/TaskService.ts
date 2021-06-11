@@ -48,11 +48,24 @@ class TaskService {
     return task;
 
   }
-  async listByTask(user_id: number){
+  async listByTask(id_category: number,user_id: number){
     
     const list = await this.taskRepository.find({
-      user_id,
+      where:{
+        user_id:user_id,
+        id_category:id_category,
+      },
     });
+    console.log(list);
+    
+    return list;
+
+  }
+  async listByTaskAll(){
+    
+    const list = await this.taskRepository.find();
+    
+    console.log(list);
     
     return list;
 
